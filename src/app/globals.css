@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --spacing-6xl: 75rem;
+  --container-screen-2xl: 83.75rem;
+
+  --shadow-service: 0px 3px 20px 0px #8e9ca90d;
+  --shadow-deatail_shadow: 0px 20px 80px 0px #68758d26;
+  --shadow-dark-md: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+
+  --transition-duration-150: 150ms;
+
+  --spacing-25: 25rem;
+  --spacing-29: 28rem;
+  --spacing-45: 45rem;
+  --spacing-50: 50rem;
+  --spacing-94: 22.5rem;
+  --spacing-120: 120rem;
+  --spacing-6_25: 6.25rem;
+  --spacing-70\%: 70%;
+  --spacing-40\%: 40%;
+  --spacing-30\%: 30%;
+  --spacing-60\%: 60%;
+  --spacing-8_5: 8.5rem;
+  --spacing-3_75: 3.75rem;
+
+  --height-150: 750px;
+  --height-6_25: 6.25rem;
+
+  --leading-extra-loose: 2.5;
+  --leading-2_5: 2.5rem;
+
+  --inset-5\%: 5%;
+  --inset-35\%: 35%;
+
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-999: 999;
+
+  --color-primary: #2f73f2;
+  --color-secondary: #547593;
+  --color-midnight_text: #102d47;
+  --color-grey: #668199;
+  --color-border: #ccd7e1;
+  --color-success: #3cd278;
+  --color-section: #f8fafc;
+  --color-darkmode: #081738;
+  --color-darklight: #000f30;
+  --color-dark_border: #224767;
+  --color-Sky-blue-mist: #c0d5fb;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  @apply overflow-x-hidden;
+}
+
+@layer base {
+  section {
+    @apply py-16;
+  }
+}
+
+.margin_top {
+  @apply md:mt-[6.25rem] mt-0;
+}
+/* Slick Slider */
+.slick-slide,
+.portfolio_slide {
+  @apply focus-visible:outline-0!;
+}
+.slick-dots li.slick-active button:before {
+  @apply opacity-100! text-primary! w-4! h-4!;
+}
+.slick-dots li button:before {
+  @apply text-base! text-[#BBC8D5]! opacity-100!;
+}
+
+.blog-details p,
+.blog-details hr {
+  @apply mb-8;
+}
+
+.blog-details hr {
+  @apply border-border dark:border-dark_border;
+}
+
+.blog-details strong {
+  @apply font-bold dark:text-white;
+}
+
+.blog-details ul {
+  @apply mb-8 list-inside list-disc space-y-3;
+}
+
+.blog-details ol {
+  @apply mb-8 list-inside list-decimal space-y-3;
+}
+
+.blog-details h1 {
+  @apply mb-8 text-3xl font-bold text-midnight_text dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.28];
+}
+
+.blog-details h2 {
+  @apply mb-8 text-2xl font-bold text-midnight_text dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28];
+}
+
+.blog-details h3 {
+  @apply mb-6 text-2xl font-bold dark:text-white sm:text-[28px] sm:leading-[40px];
+}
