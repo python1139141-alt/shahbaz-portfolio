@@ -2,19 +2,14 @@ import { getImgPath } from "@/utils/image";
 
 export const count = [
     {
-        icon: getImgPath("/images/counter/star.svg"),
-        value: "3+",
-        description: "Years of experience in Flutter and Python development",
+        icon: getImgPath('/images/counter/bag.svg'),
+        value: '1+',
+        description: 'Year of Experience in Flutter Development'
     },
     {
-        icon: getImgPath("/images/counter/admin.svg"),
-        value: "10+",
-        description: "Successfully completed projects across mobile and web platforms",
-    },
-    {
-        icon: getImgPath("/images/counter/bag.svg"),
-        value: "2",
-        description: "Professional certifications from IBM and Flutter internship",
+        icon: getImgPath('/images/counter/admin.svg'),
+        value: '2.5+',
+        description: 'Year of Experience in Python & Django'
     },
 ];
 
