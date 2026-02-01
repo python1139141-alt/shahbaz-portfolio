@@ -62,8 +62,8 @@ const ContactInfo = () => {
               </div>
               <div>
                 <span className='text-midnight_text dark:text-white text-xl font-bold'>Twitter</span>
-                <p className='text-DeepOcean font-normal text-base pt-2 dark:text-white/50'>@shahbazahmed</p>
-                <Link href='https://twitter.com/shahbazahmed' target='_blank' className='text-primary text-sm hover:underline'>Follow Me</Link>
+                <p className='text-DeepOcean font-normal text-base pt-2 dark:text-white/50'>@Ano__NYS</p>
+                <Link href='https://twitter.com/Ano__NYS' target='_blank' className='text-primary text-sm hover:underline'>Follow Me</Link>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const ContactInfo = () => {
               </div>
               <div>
                 <span className='text-midnight_text dark:text-white text-xl font-bold'>Discord</span>
-                <p className='text-DeepOcean font-normal text-base pt-2 dark:text-white/50'>shahbaz#1234</p>
+                <p className='text-DeepOcean font-normal text-base pt-2 dark:text-white/50'>anonymous</p>
                 <Link href='#' className='text-primary text-sm hover:underline'>Connect</Link>
               </div>
             </div>

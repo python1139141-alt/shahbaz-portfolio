@@ -1,123 +1,139 @@
-import React from 'react'
-import Link from 'next/link'
+'use client'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { getImgPath } from '@/utils/image'
 
 const ContactForm = () => {
+  const [status, setStatus] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    try {
+      const response = await fetch('https://formspree.io/f/xanyygkl', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        form.reset()
+        setTimeout(() => setStatus(''), 3000)
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    }
+  }
+
   return (
-    <>
-      <section className='dark:bg-darkmode md:pb-24 pb-16'>
-        <div className='container mx-auto max-w-6xl px-4'>
-          <div className='grid md:grid-cols-12 grid-cols-1 gap-8'>
-            <div className='col-span-6'>
-              <h2 className='max-w-72 text-[40px] leading-tight font-bold mb-9 text-midnight_text dark:text-white'>
+    <section className='dark:bg-darkmode pt-8 pb-16'>
+      <div className='container mx-auto max-w-6xl px-4'>
+        <div className='grid grid-cols-12 gap-8'>
+          <div className='lg:col-span-6 col-span-12'>
+            <div className='pb-6'>
+              <h2 className='text-midnight_text dark:text-white text-4xl font-bold pb-3'>
                 Contact Me
               </h2>
-              <form className='flex flex-wrap w-full m-auto justify-between'>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='first-name'
-                      className='pb-3 inline-block text-base'>
-                      First Name*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg py-2.5 border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                      type='text'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='last-name'
-                      className='pb-3 inline-block text-base'>
-                      Last Name*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                      type='text'
-                    />
-                  </div>
-                </div>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='email'
-                      className='pb-3 inline-block text-base'>
-                      Email address*
-                    </label>
-                    <input
-                      type='email'
-                      className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='Specialist'
-                      className='pb-3 inline-block text-base'>
-                      Specialist*
-                    </label>
-                    <select className='w-full text-base px-4 py-2.5 rounded-lg border-border dark:text-white border-solid dark:bg-darkmode border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'>
-                      <option value=''>Choose a specialist</option>
-                      <option value='Baking &amp; Pastry'>
-                        Choose a specialist
-                      </option>
-                      <option value='Exotic Cuisine'>Exotic Cuisine</option>
-                      <option value='French Desserts'>French Desserts</option>
-                      <option value='Seafood &amp; Wine'>
-                        Choose a specialist
-                      </option>
-                    </select>
-                  </div>
-                </div>
-                <div className='sm:flex gap-3 w-full'>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='date'
-                      className='pb-3 inline-block text-base'>
-                      Date*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg  py-2.5 outline-hidden dark:text-white dark:bg-darkmode border-border border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'
-                      type='date'
-                    />
-                  </div>
-                  <div className='mx-0 my-2.5 flex-1'>
-                    <label
-                      htmlFor='time'
-                      className='pb-3 inline-block text-base'>
-                      Time*
-                    </label>
-                    <input
-                      className='w-full text-base px-4 rounded-lg py-2.5 border-border outline-hidden dark:text-white dark:bg-darkmode border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0'
-                      type='time'
-                    />
-                  </div>
-                </div>
-                <div className='mx-0 my-2.5 w-full'>
-                  <Link
-                    href='#'
-                    className='bg-primary rounded-lg text-white py-4 px-8 mt-4 inline-block hover:bg-blue-700'
-                    type='submit'>
-                    Send
-                  </Link>
-                </div>
-              </form>
+              <p className='text-grey dark:text-white/70 text-lg font-semibold'>
+                Have a project in mind? Let's work together!
+              </p>
             </div>
-            <div className='col-span-6'>
-              <Image
-                src={getImgPath('/images/contact-page/contact.jpg')}
-                alt='Contact'
-                width={1300}
-                height={0}
-                quality={100}
-                style={{ width: '100%', height: 'auto' }}
-                className='bg-no-repeat bg-contain'
-              />
-            </div>
+
+            <form onSubmit={handleSubmit}>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div>
+                  <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+                    First Name*
+                  </label>
+                  <input
+                    type='text'
+                    name='firstName'
+                    required
+                    className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
+                    placeholder='John'
+                  />
+                </div>
+
+                <div>
+                  <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+                    Last Name*
+                  </label>
+                  <input
+                    type='text'
+                    name='lastName'
+                    required
+                    className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
+                    placeholder='Doe'
+                  />
+                </div>
+              </div>
+
+              <div className='mt-6'>
+                <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+                  Email Address*
+                </label>
+                <input
+                  type='email'
+                  name='email'
+                  required
+                  className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
+                  placeholder='john@example.com'
+                />
+              </div>
+
+              <div className='mt-6'>
+                <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+                  Message*
+                </label>
+                <textarea
+                  name='message'
+                  required
+                  rows={5}
+                  className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
+                  placeholder='Tell me about your project...'
+                />
+              </div>
+
+              {status === 'success' && (
+                <div className='mt-4 p-4 bg-success/20 text-success rounded-lg'>
+                  Thanks! Your message has been sent successfully.
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className='mt-4 p-4 bg-red-500/20 text-red-500 rounded-lg'>
+                  Oops! Something went wrong. Please try again.
+                </div>
+              )}
+
+              <button
+                type='submit'
+                className='mt-8 py-3 px-8 bg-primary text-white rounded-md hover:bg-blue-700 transition duration-300 font-medium'>
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div className='lg:col-span-6 col-span-12'>
+            <Image
+              src={getImgPath('/images/contact-page/contact.jpg')}
+              alt='Contact'
+              className='rounded-lg w-full h-full object-cover'
+              width={600}
+              height={600}
+              quality={100}
+            />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 
