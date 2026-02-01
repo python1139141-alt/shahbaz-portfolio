@@ -41,7 +41,7 @@ const Footer: FC = () => {
         </div>
         <div>
           <p className='text-base text-white/50'>
-            © 2024 Shahbaz Ahmed. All rights reserved.
+            © 2026 Shahbaz Ahmed. All rights reserved.
           </p>
         </div>
       </div>
