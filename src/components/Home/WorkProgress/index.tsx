@@ -20,11 +20,10 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
 
   return (
     <section
-      className={`scroll-mt-25 ${
-        isColorMode
+      className={`scroll-mt-25 ${isColorMode
           ? 'dark:bg-darklight bg-section'
           : 'dark:bg-darkmode bg-white'
-      }`}
+        }`}
       id='about'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='grid md:grid-cols-12 items-center gap-7'>
@@ -53,10 +52,10 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
             <h2 className='pt-9 pb-8 text-midnight_text font-bold dark:text-white text-4xl'>
               Build amazing websites and landing pages with ease
             </h2>
-            <p className='text-gray dark:text-white/70 text-base font-semibold'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida.
+            <p className='text-grey dark:text-white/50 text-lg mb-8'>
+              I specialize in building modern mobile and web applications using Flutter and Python.
+              My development process focuses on clean code, user experience, and delivering
+              high-quality solutions that meet client requirements.
             </p>
 
             <div className='block mx-auto pt-12'>

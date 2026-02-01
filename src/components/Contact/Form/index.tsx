@@ -12,13 +12,18 @@ const ContactForm = () => {
     const data = new FormData(form)
 
     try {
-      const response = await fetch('https://formspree.io/f/xanyygkl', {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
+      // Send email using mailto
+      const formData = {
+        firstName: data.get('firstName'),
+        lastName: data.get('lastName'),
+        email: data.get('email'),
+        message: data.get('message')
+      }
+
+      const mailtoLink = `mailto:shahbaz1139141@gmail.com?subject=New Contact from ${formData.firstName} ${formData.lastName}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
+
+      window.location.href = mailtoLink
+      const response = { ok: true }
 
       if (response.ok) {
         setStatus('success')
