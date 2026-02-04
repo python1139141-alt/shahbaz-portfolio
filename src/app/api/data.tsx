@@ -46,7 +46,9 @@ export const portfolioinfo = [
         title: 'Shop Management System',
         slug: 'https://github.com/python1139141-alt/Vyapar-app',
         info: 'Flutter - Copy of Vyapar App',
-        Class: 'md:mt-0'
+        Class: 'md:mt-0',
+        hasGallery: true,
+        galleryPath: '/images/portfolio/shop management/'
     },
     {
         image: getImgPath('/images/portfolio/clinic appointment system/1.jpeg'),
@@ -54,7 +56,9 @@ export const portfolioinfo = [
         title: 'Clinic Appointment System',
         slug: 'https://github.com/python1139141-alt/Clinic_apppointment',
         info: 'Flutter Mobile App with Firebase',
-        Class: 'md:mt-24'
+        Class: 'md:mt-24',
+        hasGallery: true,
+        galleryPath: '/images/portfolio/clinic appointment system/'
     },
     {
         image: getImgPath('/images/portfolio/mz super store/1.png'),
@@ -62,6 +66,20 @@ export const portfolioinfo = [
         title: 'MZ Super Store Software',
         slug: '#',
         info: 'Python Desktop Application (Client Project)',
-        Class: 'md:mt-0'
+        Class: 'md:mt-0',
+        hasGallery: true,
+        galleryPath: '/images/portfolio/mz super store/'
+    },
+    {
+        image: getImgPath('/images/portfolio/hostle management/1.png'),
+        alt: 'Hostel Management System',
+        title: 'Hostel Management System',
+        slug: 'https://github.com/python1139141-alt/hostel-management',
+        info: 'Flutter App for Hostel Administration',
+        Class: 'md:mt-24',
+        hasGallery: true,
+        hasVideo: true,
+        galleryPath: '/images/portfolio/hostle management/',
+        videoPath: '/images/portfolio/hostle management/Recording 2026-02-01 113209.mp4'
     },
 ];
