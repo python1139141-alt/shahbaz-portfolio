@@ -41,7 +41,7 @@ export const Servicebox = [
 
 export const portfolioinfo = [
     {
-        image: getImgPath('/images/portfolio/cozycasa.png'),
+        image: getImgPath('/images/portfolio/shop management/1.jpeg'),
         alt: 'Shop Management System',
         title: 'Shop Management System',
         slug: 'https://github.com/python1139141-alt/Vyapar-app',
@@ -49,7 +49,7 @@ export const portfolioinfo = [
         Class: 'md:mt-0'
     },
     {
-        image: getImgPath('/images/portfolio/humans.png'),
+        image: getImgPath('/images/portfolio/clinic appointment system/1.jpeg'),
         alt: 'Clinic Appointment System',
         title: 'Clinic Appointment System',
         slug: 'https://github.com/python1139141-alt/Clinic_apppointment',
@@ -57,27 +57,11 @@ export const portfolioinfo = [
         Class: 'md:mt-24'
     },
     {
-        image: getImgPath('/images/portfolio/mars.png'),
+        image: getImgPath('/images/portfolio/mz super store/1.png'),
         alt: 'MZ Super Store Software',
         title: 'MZ Super Store Software',
         slug: '#',
         info: 'Python Desktop Application (Client Project)',
-        Class: 'md:mt-0'
-    },
-    {
-        image: getImgPath('/images/portfolio/diary_app.webp'),
-        alt: 'Diary App',
-        title: 'Diary App with Firebase',
-        slug: 'https://github.com/python1139141-alt/Dairy-App-TODO-with-firebase-authentications',
-        info: 'Flutter TODO App with Firebase Auth',
-        Class: 'md:mt-24'
-    },
-    {
-        image: getImgPath('/images/portfolio/web_scraping.webp'),
-        alt: 'Web Scraping Project',
-        title: 'Web Scraping',
-        slug: 'https://github.com/python1139141-alt/Web-Scraping',
-        info: 'Python Web Scraping Tools',
         Class: 'md:mt-0'
     },
 ];
