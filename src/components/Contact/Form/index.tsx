@@ -5,35 +5,43 @@ import { getImgPath } from '@/utils/image'
 
 const ContactForm = () => {
   const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setLoading(true)
     const form = e.currentTarget
     const data = new FormData(form)
 
     try {
-      // Send email using mailto
-      const formData = {
-        firstName: data.get('firstName'),
-        lastName: data.get('lastName'),
-        email: data.get('email'),
-        message: data.get('message')
-      }
+      // Send via FormSubmit.co — free, no API key needed
+      const response = await fetch('https://formsubmit.co/ajax/shahbaz1139141@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: `${data.get('firstName')} ${data.get('lastName')}`,
+          email: data.get('email'),
+          message: data.get('message'),
+          _subject: `Portfolio Contact: ${data.get('firstName')} ${data.get('lastName')}`
+        })
+      })
 
-      const mailtoLink = `mailto:shahbaz1139141@gmail.com?subject=New Contact from ${formData.firstName} ${formData.lastName}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
+      const result = await response.json()
 
-      window.location.href = mailtoLink
-      const response = { ok: true }
-
-      if (response.ok) {
+      if (result.success === 'true' || result.success === true || response.ok) {
         setStatus('success')
         form.reset()
-        setTimeout(() => setStatus(''), 3000)
+        setTimeout(() => setStatus(''), 5000)
       } else {
         setStatus('error')
       }
     } catch (error) {
       setStatus('error')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -62,7 +70,7 @@ const ContactForm = () => {
                     name='firstName'
                     required
                     className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-                    placeholder='John'
+                    placeholder='Your first name'
                   />
                 </div>
 
@@ -75,7 +83,7 @@ const ContactForm = () => {
                     name='lastName'
                     required
                     className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-                    placeholder='Doe'
+                    placeholder='Your last name'
                   />
                 </div>
               </div>
@@ -89,7 +97,7 @@ const ContactForm = () => {
                   name='email'
                   required
                   className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-                  placeholder='john@example.com'
+                  placeholder='you@example.com'
                 />
               </div>
 
@@ -120,8 +128,9 @@ const ContactForm = () => {
 
               <button
                 type='submit'
-                className='mt-8 py-3 px-8 bg-primary text-white rounded-md hover:bg-blue-700 transition duration-300 font-medium'>
-                Send Message
+                disabled={loading}
+                className='mt-8 py-3 px-8 bg-primary text-white rounded-md hover:bg-blue-700 transition duration-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed'>
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
