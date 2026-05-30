@@ -86,7 +86,7 @@ const PortfolioList = () => {
               controls
               autoPlay
               className='w-full rounded-lg'>
-              <source src={selectedProject.videoPath} type='video/mp4' />
+              <source src={encodeURI(selectedProject.videoPath)} type='video/mp4' />
             </video>
           </div>
         </div>
@@ -111,7 +111,7 @@ const PortfolioList = () => {
               {Array.from({ length: 22 }).map((_, i) => (
                 <img
                   key={i}
-                  src={`${selectedProject.galleryPath}${i + 1}.${selectedProject.galleryPath.includes('mz super store') || selectedProject.galleryPath.includes('hostle') ? 'png' : 'jpeg'}`}
+                  src={encodeURI(`${selectedProject.galleryPath}${i + 1}.${selectedProject.galleryPath.includes('mz super store') || selectedProject.galleryPath.includes('hostle') ? 'png' : 'jpeg'}`)}
                   alt={`Screenshot ${i + 1}`}
                   className='w-full rounded-lg'
                   onError={(e) => (e.currentTarget.style.display = 'none')}

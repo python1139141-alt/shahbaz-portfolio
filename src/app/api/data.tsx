@@ -68,6 +68,8 @@ export const portfolioinfo = [
         info: 'Python Desktop Application (Client Project)',
         Class: 'md:mt-0',
         hasGallery: true,
+        hasVideo: true,
+        videoPath: '/images/portfolio/mz super store/Recording 2026-02-01 120722.mp4',
         galleryPath: '/images/portfolio/mz super store/'
     },
     {
@@ -82,4 +84,16 @@ export const portfolioinfo = [
         galleryPath: '/images/portfolio/hostle management/',
         videoPath: '/images/portfolio/hostle management/Recording 2026-02-01 113209.mp4'
     },
+    {
+        image: getImgPath('/images/portfolio/clinic appointment system/1.jpeg'), // Fallback until user provides proper
+        alt: 'Medicine Reminder App',
+        title: 'Medicine Reminder App',
+        slug: '#',
+        info: 'Android Application',
+        Class: 'md:mt-0',
+        hasGallery: false,
+        hasVideo: true,
+        videoPath: '/images/portfolio/medicine_reminder/video.mp4',
+        galleryPath: '/images/portfolio/medicine_reminder/'
+    }
 ];

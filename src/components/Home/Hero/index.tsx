@@ -25,26 +25,7 @@ const Hero = () => {
       `}</style>
       <div className='container mx-auto max-w-6xl px-4 relative z-10'>
 
-        {/* Mobile: Small oval image in top-right corner */}
-        <div className='md:hidden absolute top-4 right-4 z-20'>
-          <div className='animate-float'>
-            <div className='relative'>
-              <div className='absolute -inset-2 rounded-[50%] bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-400 opacity-30 blur-md animate-pulse-glow'></div>
-              <div className='relative rounded-[50%] p-[2px] bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-400'>
-                <div className='rounded-[50%] overflow-hidden bg-darklight w-[80px] h-[95px]'>
-                  <Image
-                    src={getImgPath('/images/hero/hero-image.png')}
-                    alt='Shahbaz Ahmed'
-                    width={80}
-                    height={95}
-                    quality={100}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         <div className='grid grid-cols-12 gap-4'>
           <div
@@ -79,30 +60,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Desktop: Large oval image on the right */}
-          <div
-            className="md:col-span-5 hidden md:flex items-center justify-center"
-            data-aos='fade-left'
-            data-aos-delay='400'
-            data-aos-duration='1000'>
-            <div className='animate-float'>
-              <div className='relative'>
-                <div className='absolute -inset-3 rounded-[50%] bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-400 opacity-30 blur-lg animate-pulse-glow'></div>
-                <div className='relative rounded-[50%] p-1 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-400'>
-                  <div className='rounded-[50%] overflow-hidden bg-darklight w-[280px] h-[340px]'>
-                    <Image
-                      src={getImgPath('/images/hero/hero-image.png')}
-                      alt='Shahbaz Ahmed - Full-Stack Developer'
-                      width={280}
-                      height={340}
-                      quality={100}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
