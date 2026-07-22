@@ -45,55 +45,97 @@ export const portfolioinfo = [
         alt: 'Shop Management System',
         title: 'Shop Management System',
         slug: 'https://github.com/python1139141-alt/Vyapar-app',
-        info: 'Flutter - Copy of Vyapar App',
+        info: 'Shop management system built with Flutter and Dart.',
         Class: 'md:mt-0',
         hasGallery: true,
-        galleryPath: '/images/portfolio/shop management/'
+        galleryPath: '/images/portfolio/shop management/',
+        hasVideo: false,
+        tags: ['Flutter', 'Dart']
     },
     {
         image: getImgPath('/images/portfolio/clinic appointment system/1.jpeg'),
         alt: 'Clinic Appointment System',
         title: 'Clinic Appointment System',
         slug: 'https://github.com/python1139141-alt/Clinic_apppointment',
-        info: 'Flutter Mobile App with Firebase',
+        info: 'Clinic Appointment System built with Flutter, Dart, and Firebase.',
         Class: 'md:mt-24',
         hasGallery: true,
-        galleryPath: '/images/portfolio/clinic appointment system/'
+        galleryPath: '/images/portfolio/clinic appointment system/',
+        hasVideo: false,
+        tags: ['Flutter', 'Dart', 'Firebase']
     },
     {
         image: getImgPath('/images/portfolio/mz super store/1.png'),
         alt: 'MZ Super Store Software',
         title: 'MZ Super Store Software',
         slug: '#',
-        info: 'Python Desktop Application (Client Project)',
+        info: 'Python Desktop Application (Client Project). Inventory and Sales Management.',
         Class: 'md:mt-0',
         hasGallery: true,
         hasVideo: true,
         videoPath: '/images/portfolio/mz super store/Recording 2026-02-01 120722.mp4',
-        galleryPath: '/images/portfolio/mz super store/'
+        galleryPath: '/images/portfolio/mz super store/',
+        tags: ['Python', 'Desktop']
     },
     {
         image: getImgPath('/images/portfolio/hostle management/1.png'),
         alt: 'Hostel Management System',
         title: 'Hostel Management System',
         slug: 'https://github.com/python1139141-alt/hostel-management',
-        info: 'Flutter App for Hostel Administration',
+        info: 'Flutter App for Hostel Administration.',
         Class: 'md:mt-24',
         hasGallery: true,
         hasVideo: true,
         galleryPath: '/images/portfolio/hostle management/',
-        videoPath: '/images/portfolio/hostle management/Recording 2026-02-01 113209.mp4'
+        videoPath: '/videos/VID-20260721-WA0006.mp4',
+        tags: ['Flutter', 'Dart']
     },
     {
-        image: getImgPath('/images/portfolio/clinic appointment system/1.jpeg'), // Fallback until user provides proper
+        image: 'https://images.unsplash.com/photo-1584308666744-24d5e4a81f33?q=80&w=1000&auto=format&fit=crop', 
         alt: 'Medicine Reminder App',
         title: 'Medicine Reminder App',
         slug: '#',
-        info: 'Android Application',
+        info: 'Private Client Project: Medicine Reminder App (Android). Features intelligent scheduling and alerts.',
         Class: 'md:mt-0',
         hasGallery: false,
         hasVideo: true,
-        videoPath: '/images/portfolio/medicine_reminder/video.mp4',
-        galleryPath: '/images/portfolio/medicine_reminder/'
+        videoPath: '/videos/Medicine Reminder.mp4',
+        tags: ['Python', 'FastAPI', 'MySQL']
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop', 
+        alt: 'Bzar 360',
+        title: 'Bzar 360',
+        slug: '#',
+        info: 'Devnox working project. Private source code. Focuses on robust multi-vendor marketplace functionality.',
+        Class: 'md:mt-24',
+        hasGallery: false,
+        hasVideo: true,
+        videoPath: '/videos/Bazar 360.mp4',
+        tags: ['Flutter', 'Dart']
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop', 
+        alt: 'Video to Audio Converter',
+        title: 'Video to Audio Converter',
+        slug: 'https://github.com/python1139141-alt/video_to_audio-',
+        info: 'Utility tool to convert video files to audio effortlessly.',
+        Class: 'md:mt-0',
+        hasGallery: false,
+        hasVideo: true,
+        videoPath: '/videos/Video to Audio Converter.mp4',
+        tags: ['Python', 'Kotlin']
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop', 
+        alt: 'MMC Transport International',
+        title: 'MMC Transport International',
+        slug: '#',
+        info: 'Client project featuring role-based applications for transport and logistics management.',
+        Class: 'md:mt-24',
+        hasGallery: false,
+        hasVideo: true,
+        videoPath: '/videos/MMC Transport.mp4',
+        tags: ['Flutter', 'React', 'Firebase', 'REST APIs']
     }
 ];

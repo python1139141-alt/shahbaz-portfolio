@@ -1,18 +1,22 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from 'react';
+import { Outfit, JetBrains_Mono } from 'next/font/google';
+import { Icon } from '@iconify/react';
+
+const outfit = Outfit({ subsets: ['latin'], weight: ['400', '600', '700'] });
+const jetbrains = JetBrains_Mono({ subsets: ['latin'], weight: ['500'] });
 
 const Contactform = () => {
-  const [status, setStatus] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    const form = e.currentTarget
-    const data = new FormData(form)
+    e.preventDefault();
+    setLoading(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
     try {
-      // Send via FormSubmit.co — free, no API key needed
       const response = await fetch('https://formsubmit.co/ajax/shahbaz1139141@gmail.com', {
         method: 'POST',
         headers: {
@@ -25,115 +29,134 @@ const Contactform = () => {
           message: data.get('message'),
           _subject: `New Project Request: ${data.get('firstName')} ${data.get('lastName')}`
         })
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (result.success === 'true' || result.success === true || response.ok) {
-        setStatus('success')
-        form.reset()
-        setTimeout(() => setStatus(''), 5000)
+        setStatus('success');
+        form.reset();
+        setTimeout(() => setStatus(''), 5000);
       } else {
-        setStatus('error')
+        setStatus('error');
       }
     } catch (error) {
-      setStatus('error')
+      setStatus('error');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <section className='dark:bg-darkmode'>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div className='mx-auto max-w-3xl text-center pb-8'>
-          <h2 className='text-midnight_text dark:text-white text-4xl font-bold pb-3'>
-            Start a Project
+    <section className="bg-[#0b1326] py-24 px-5 md:px-16" id="contact" data-aos="fade-up" data-aos-duration="1000">
+      <div className="max-w-[800px] mx-auto bg-[#131b2e] border border-white/5 rounded-[2rem] p-8 md:p-14 relative overflow-hidden shadow-2xl">
+        
+        {/* Ambient Glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4edea3]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="text-center mb-12 relative z-10">
+          <div className={`${jetbrains.className} inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs text-[#4edea3] mb-6 uppercase tracking-wider`}>
+            Contact Me
+          </div>
+          <h2 className={`${outfit.className} text-4xl md:text-5xl font-bold text-white tracking-tight mb-4`}>
+            Start a <span className="text-[#4edea3]">Project</span>
           </h2>
-          <p className='text-grey dark:text-white/70 text-lg'>
-            Have an idea? Let's bring it to life together!
+          <p className={`${outfit.className} text-[#bbcabf] text-lg max-w-xl mx-auto`}>
+            Have an idea? Let's bring it to life together. Fill out the form below and I'll get back to you within 24 hours.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className='max-w-2xl mx-auto'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+              <label className={`${outfit.className} text-white/80 text-sm font-medium block mb-2`}>
                 First Name*
               </label>
               <input
-                type='text'
-                name='firstName'
+                type="text"
+                name="firstName"
                 required
-                className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-                placeholder='Your first name'
+                className={`${outfit.className} w-full px-5 py-4 rounded-xl border border-white/10 bg-[#0b1326]/50 text-white placeholder-white/30 focus:outline-none focus:border-[#4edea3] focus:ring-1 focus:ring-[#4edea3] transition-all`}
+                placeholder="Your first name"
               />
             </div>
 
             <div>
-              <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+              <label className={`${outfit.className} text-white/80 text-sm font-medium block mb-2`}>
                 Last Name*
               </label>
               <input
-                type='text'
-                name='lastName'
+                type="text"
+                name="lastName"
                 required
-                className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-                placeholder='Your last name'
+                className={`${outfit.className} w-full px-5 py-4 rounded-xl border border-white/10 bg-[#0b1326]/50 text-white placeholder-white/30 focus:outline-none focus:border-[#4edea3] focus:ring-1 focus:ring-[#4edea3] transition-all`}
+                placeholder="Your last name"
               />
             </div>
           </div>
 
-          <div className='mt-6'>
-            <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+          <div>
+            <label className={`${outfit.className} text-white/80 text-sm font-medium block mb-2`}>
               Email Address*
             </label>
             <input
-              type='email'
-              name='email'
+              type="email"
+              name="email"
               required
-              className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-              placeholder='you@example.com'
+              className={`${outfit.className} w-full px-5 py-4 rounded-xl border border-white/10 bg-[#0b1326]/50 text-white placeholder-white/30 focus:outline-none focus:border-[#4edea3] focus:ring-1 focus:ring-[#4edea3] transition-all`}
+              placeholder="you@example.com"
             />
           </div>
 
-          <div className='mt-6'>
-            <label className='text-midnight_text dark:text-white text-base font-medium block mb-2'>
+          <div>
+            <label className={`${outfit.className} text-white/80 text-sm font-medium block mb-2`}>
               Project Details*
             </label>
             <textarea
-              name='message'
+              name="message"
               required
               rows={5}
-              className='w-full px-4 py-3 rounded-lg border border-border dark:border-dark_border bg-transparent text-midnight_text dark:text-white focus:outline-none focus:border-primary'
-              placeholder='Tell me about your project idea...'
+              className={`${outfit.className} w-full px-5 py-4 rounded-xl border border-white/10 bg-[#0b1326]/50 text-white placeholder-white/30 focus:outline-none focus:border-[#4edea3] focus:ring-1 focus:ring-[#4edea3] transition-all resize-none`}
+              placeholder="Tell me about your project idea..."
             />
           </div>
 
           {status === 'success' && (
-            <div className='mt-4 p-4 bg-success/20 text-success rounded-lg text-center'>
-              ✅ Thank you! I'll get back to you soon.
+            <div className={`${outfit.className} p-4 bg-[#4edea3]/10 border border-[#4edea3]/20 text-[#4edea3] rounded-xl flex items-center gap-3`}>
+              <Icon icon="lucide:check-circle-2" className="text-xl" />
+              Thank you! I'll get back to you soon.
             </div>
           )}
 
           {status === 'error' && (
-            <div className='mt-4 p-4 bg-red-500/20 text-red-500 rounded-lg text-center'>
-              ❌ Something went wrong. Please try again.
+            <div className={`${outfit.className} p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl flex items-center gap-3`}>
+              <Icon icon="lucide:alert-circle" className="text-xl" />
+              Something went wrong. Please try again.
             </div>
           )}
 
-          <div className='text-center mt-8'>
+          <div className="pt-4">
             <button
-              type='submit'
+              type="submit"
               disabled={loading}
-              className='py-3 px-12 bg-primary text-white rounded-md hover:bg-blue-700 transition duration-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed'>
-              {loading ? 'Sending...' : 'Start Project'}
+              className={`${outfit.className} w-full py-4 bg-[#4edea3] text-[#003824] rounded-xl font-bold text-lg hover:bg-[#10b981] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+            >
+              {loading ? (
+                <>
+                  <Icon icon="lucide:loader-2" className="animate-spin text-xl" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Start Project <Icon icon="lucide:arrow-right" className="text-xl" />
+                </>
+              )}
             </button>
           </div>
         </form>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contactform
+export default Contactform;
