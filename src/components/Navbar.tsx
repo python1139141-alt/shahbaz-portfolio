@@ -47,18 +47,18 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled || open
-          ? "border-b border-white/10 bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent"
+          ? "border-white/10 bg-background/90 shadow-lg shadow-black/10 backdrop-blur-xl"
+          : "border-transparent bg-background/90 backdrop-blur-md"
       }`}
     >
-      <nav className="container-px mx-auto flex h-16 max-w-8xl items-center justify-between">
-        <Link href="/" className="group flex items-center gap-2.5">
+      <nav className="container-px relative z-10 mx-auto flex h-16 max-w-8xl items-center justify-between">
+        <Link href="/" className="group flex min-w-0 items-center gap-2.5">
           <span className="grid h-8 w-8 place-items-center rounded-md bg-accent font-display text-sm font-bold text-black">
             S
           </span>
-          <span className="font-display text-sm font-semibold tracking-tight">
+          <span className="truncate font-display text-sm font-semibold tracking-tight">
             {PERSONAL.name}
           </span>
         </Link>
@@ -122,7 +122,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-16 z-40 bg-background md:hidden"
+            className="fixed inset-x-0 bottom-0 top-16 z-[60] overflow-y-auto bg-background/[0.98] backdrop-blur-xl md:hidden"
           >
             <ul className="container-px flex flex-col gap-1 py-6">
               {LINKS.map((link, i) => {
