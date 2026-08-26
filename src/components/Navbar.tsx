@@ -46,7 +46,8 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header
+    <>
+      <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled || open
           ? "border-white/10 bg-background/90 shadow-lg shadow-black/10 backdrop-blur-xl"
@@ -114,6 +115,8 @@ export function Navbar() {
         </div>
       </nav>
 
+      </header>
+
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
@@ -161,6 +164,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
