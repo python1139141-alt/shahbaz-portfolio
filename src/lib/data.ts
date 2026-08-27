@@ -108,14 +108,10 @@ const shopImages = Array.from({ length: 22 }, (_, i) =>
 const clinicImages = Array.from({ length: 21 }, (_, i) =>
   media("clinic appointment system", `${i + 1}.jpeg`)
 );
-const mzImages = Array.from({ length: 6 }, (_, i) =>
-  media("mz super store", `${i + 1}.png`)
-);
 const hostelImages = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12].map((n) =>
   media("hostle management", `${n}.png`)
 );
 
-const mzVideo = media("mz super store", "Recording 2026-02-01 120722.mp4");
 const hostelVideoLocal = media(
   "hostle management",
   "Recording 2026-02-01 113209.mp4"
@@ -379,7 +375,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart"],
     categories: ["Mobile Apps"],
     year: "2024",
-    coverImage: shopImages[0],
+    coverImage: "/picture_banners/shop_management_system.jpg",
     images: shopImages,
   },
   {
@@ -392,24 +388,8 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart", "Firebase"],
     categories: ["Mobile Apps"],
     year: "2024",
-    coverImage: clinicImages[0],
+    coverImage: "/picture_banners/clinic_appointment_system.jpg",
     images: clinicImages,
-  },
-  {
-    id: "mz-super-store-software",
-    slug: "mz-super-store-software",
-    name: "MZ Super Store Software",
-    tagline: "Inventory and sales, under control.",
-    description:
-      "A Python desktop application and client project focused on inventory and sales management for retail operations.",
-    technologies: ["Python", "Tkinter"],
-    categories: ["Desktop", "Client Projects"],
-    year: "2023",
-    note: "Client project",
-    company: "Devnox Solutions",
-    coverImage: mzImages[0],
-    images: mzImages,
-    videos: [mzVideo],
   },
   {
     id: "hostel-management-system",
@@ -421,7 +401,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart"],
     categories: ["Mobile Apps"],
     year: "2024",
-    coverImage: hostelImages[0],
+    coverImage: "/picture_banners/hostle_management_system.jpg",
     images: hostelImages,
     videos: [hostelVideoLocal, hostelVideo],
   },
@@ -435,6 +415,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Python", "FastAPI", "MySQL"],
     categories: ["Mobile Apps", "Backend", "Client Projects"],
     year: "2025",
+    coverImage: "/picture_banners/medicine_reminder_app.png",
     note: "Private client project",
     videos: [medicineVideoLocal, medicineVideo],
   },
@@ -448,6 +429,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart"],
     categories: ["Mobile Apps", "Client Projects"],
     year: "2025",
+    coverImage: "/picture_banners/bzar_360.png",
     note: "Devnox working project · private source",
     company: "Devnox Solutions",
     videos: [bzarVideo],
@@ -462,6 +444,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Python", "Kotlin"],
     categories: ["Desktop"],
     year: "2023",
+    coverImage: "/picture_banners/Video_to_Audio_Converter.jpg",
     videos: [v2aVideo],
   },
   {
@@ -474,6 +457,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "React", "Firebase", "REST APIs"],
     categories: ["Client Projects", "Web", "Mobile Apps"],
     year: "2025",
+    coverImage: "/picture_banners/MMC_Transport_International.webp",
     note: "Client project",
     videos: [mmcVideo],
   },
@@ -487,6 +471,7 @@ export const PROJECTS: Project[] = [
     technologies: [],
     categories: ["Mobile Apps", "Client Projects"],
     year: "2025",
+    coverImage: "/picture_banners/Kameti_App.png",
     note: "Freelance project",
     githubUrl: "https://github.com/python1139141-alt/Kameti",
   },
@@ -513,21 +498,9 @@ export const PROJECTS: Project[] = [
     technologies: ["Flutter", "Dart", "Android"],
     categories: ["Mobile Apps", "Client Projects"],
     year: "2025",
+    coverImage: "/picture_banners/cipher_scan.webp",
     note: "Client project",
     liveUrl: "https://cipherscan-mu.vercel.app/",
-  },
-  {
-    id: "dastoor-marquee",
-    slug: "dastoor-marquee",
-    name: "Dastoor Marquee",
-    tagline: "Mansehra's premier wedding venue.",
-    description:
-      "A modern web presence for Dastoor Marquee — a wedding and event venue in Mansehra — with venue showcase and booking information.",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
-    categories: ["Web", "Client Projects"],
-    year: "2025",
-    note: "Client project",
-    liveUrl: "https://dastoor-marquee-psi.vercel.app/",
   },
   {
     id: "baithak",
@@ -539,6 +512,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "React", "Tailwind CSS"],
     categories: ["Web", "Client Projects"],
     year: "2025",
+    coverImage: "/picture_banners/baithak.jpg",
     note: "Client project",
     liveUrl: "https://baithak-website-rho.vercel.app/",
   },

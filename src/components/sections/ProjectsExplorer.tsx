@@ -82,12 +82,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         <div className="relative overflow-hidden">
           {project.coverImage ? (
-            <img
-              src={project.coverImage}
-              alt={project.name}
-              loading="lazy"
-              className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            <>
+              <img
+                src={project.coverImage}
+                alt={project.name}
+                loading="lazy"
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            </>
           ) : (
             <ProjectVisual
               project={project}
